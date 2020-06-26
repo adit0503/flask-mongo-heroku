@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 
 <html>
-<title>bhagwad gita</title>
+<title> श्रीमद भगवद्गीताा </title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="static/main.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
@@ -21,14 +22,13 @@ $(document).ready(function(){
 </script>
 
 <body>
-<div class="w3-card-4">
 
   <div class="w3-container w3-teal">
-    <h1>Bhagwad Gita</h1>
+    <h1> श्रीमद भगवद्गीता </h1>
   </div>
 
   <div class="w3-container w3-right-align w3-small">
-    <a href="/" class="w3-text-teal">Home</a>
+    <a href="/" class="w3-text-teal"> Home </a>
   </div>
 
   <form action="/display" method="POST" class="w3-container">
@@ -43,20 +43,18 @@ $(document).ready(function(){
       </p>
 
       <p class="w3-row">
-        <button type="submit" class="w3-btn w3-teal">Enter</button>
+        <button type="submit" class="w3-btn w3-teal"> Enter </button>
       </p>
     </div>
   </form>
 
-  <div class="w3-container">
+  <div class="w3-container w3-mobile">
     <p> Chapter: {{ chapter }} Shloka: {{ shloka }} </p>
     <div class="w3-code">
-      <pre><h3> {{ text }} </h3></pre>
+      <b class="w3-text-teal"> मूल श्लोकः </b>
+      <pre> {{ text }} </pre>
     </div>
   </div>
-
-</div>
-
 
 </body>
 </html>

@@ -20,7 +20,7 @@ def submit():
     b_id = request.values.get("book")
     ch_id = request.values.get("chapter")
     sh_id = request.values.get("shloka")
-    id = str(b_id) + str(ch_id) + str(sh_id)
+    id = str(b_id) + "ch" + str(ch_id) + "sh" + str(sh_id)
     sh = request.values.get("shlokatext")
     new_shloka = {"_id":id,"text":sh}
     shloka.insert_one(new_shloka)
@@ -34,13 +34,12 @@ def bhagwadgita():
 def display():
     ch_id = request.values.get("chapter")
     sh_id = request.values.get("shloka")
-    id = "BG" + str(ch_id) + str(sh_id)
+    id = "BG" + "ch" + str(ch_id) + "sh" + str(sh_id)
     curr_shloka = shloka.find_one(id)
     if curr_shloka:
         return render_template("bhagwadgita.html",text=curr_shloka["text"],chapter=ch_id,shloka=sh_id)
     else:
         return redirect("/bhagwadgita")
-
 
 if __name__ == "__main__":
     app.run(debug=True)

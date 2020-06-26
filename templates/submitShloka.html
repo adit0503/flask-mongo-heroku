@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<title>Submit Shloka</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  var $sh = $("#shloka");
+  for (i=1;i<=78;i++){
+      $sh.append($('<option></option>').val(i).html(i))
+  }
+});
+$(document).ready(function(){
+  var $ch = $("#chapter");
+  for (i=1;i<=18;i++){
+      $ch.append($('<option></option>').val(i).html(i))
+  }
+});
+</script>
+
+<body>
+
+<div class="w3-card-4">
+
+  <div class="w3-container w3-teal">
+    <h1>Submit Shloka</h1>
+  </div>
+
+  <br>
+
+  <form action="/submit" method="POST" class="w3-container" id="shlokaform">
+
+    <div class="w3-row">
+      <div class="w3-third w3-container">
+          <select id="book" name="book" class="w3-select w3-border" required>
+          <option value="" disabled selected>Book</option>
+          <option value="BG">Srimad BhagavadGita</option>
+          </select>
+      </div>
+
+      <div class="w3-third w3-container">
+        <select id="chapter" name="chapter" class="w3-select w3-border" required><option value="" disabled selected>Chapter</option></select>
+      </div>
+
+      <div class="w3-third w3-container">
+        <select id="shloka" name="shloka" class="w3-select w3-border" required><option value="" disabled selected>Shloka</option></select>
+      </div>
+  </div>
+
+  <br>
+    <div class="w3-container">
+      <textarea id="shlokatext" name="shlokatext" class="w3-input w3-border"  type="text" placeholder="Enter Shloka Here" rows="13"></textarea></p>
+    </div>
+
+    <div class="w3-container">
+      <button type="submit" class="w3-btn w3-teal">Submit</button>
+  </div>
+  <br>
+  </form>
+
+</div>
+
+</body>
+</html>

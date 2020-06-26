@@ -37,7 +37,7 @@ def display():
     id = "BG" + "ch" + str(ch_id) + "sh" + str(sh_id)
     curr_shloka = shloka.find_one(id)
     if curr_shloka:
-        return render_template("bhagwadgita.html",text=curr_shloka["text"],chapter=ch_id,shloka=sh_id)
+        return render_template("bhagwadgita.html",text=curr_shloka["text"].strip(),chapter=ch_id,shloka=sh_id)
     else:
         return redirect("/bhagwadgita")
 

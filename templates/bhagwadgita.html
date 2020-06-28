@@ -49,11 +49,18 @@ $(document).ready(function(){
   </form>
 
   <div class="w3-container w3-mobile">
-    <p> Chapter: {{ chapter }} Shloka: {{ shloka }} </p>
+    <p> Chapter: <b>{{ chapter }}</b> Shloka: <b>{{ shloka }}</b> </p>
     <div class="w3-code">
       <b class="w3-text-teal"> मूल श्लोकः </b>
-      <pre> {{ text }} </pre>
+      <pre>{{text}}</pre>
     </div>
+
+    <div class="w3-code">
+      <b class="w3-text-teal"> Pronunciation: </b>
+      <pre>{{verse}}</pre>
+    </div>
+
+
   </div>
 
 </body>
